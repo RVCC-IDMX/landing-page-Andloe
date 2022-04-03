@@ -3,3 +3,173 @@
 @use "./pages/landing-page";
 @use "./components/nav";
 @use "./components/hero";
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+html {
+    height: 100%;
+    background: linear-gradient(0deg, rgba(224,8,153,1) 0%, rgba(170,67,230,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+//Navbar
+.nav {
+    &__toggle {
+        position: absolute;
+        cursor: pointer;
+        margin: 0rem 1rem;
+        right: 0;
+    }   
+    svg {
+        width: 1.5rem;
+        fill: white;
+    }
+
+    .close {
+        display: none;
+    }
+    
+    .menu {
+        margin-top: 0.2rem;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        margin: 1rem;
+
+        li {
+            list-style: none;
+            display: none;
+
+            &:first-child {
+                margin-right: auto;
+                display: block;
+              }
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            font-family: "Roboto";
+        }
+
+    }
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {
+    display: block;
+  }
+
+  #nav__checkbox:checked ~ ul.nav__menu {
+    height: max-content;
+    padding-bottom: 3rem;
+  }
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+    display: block;
+  }
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+    display: none;
+  }
+
+
+//Desktop View
+@media only screen and (min-width: 560px) {
+    .nav {
+      &__toggle {
+        display: none;
+      }
+  
+      &__menu {
+        flex-direction: row;
+  
+        li {
+          display: block;
+        }
+      }
+    }
+}
+
+/////////////////////////
+
+h1 {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+    line-height: 47px;
+}
+
+h2 {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: white;
+}
+
+p   {
+    padding-top: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: white;
+}
+
+.hero {
+    margin: 20px;
+}
+
+.cta{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cta__btn {
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    line-height: 28px;
+    background-color: #2B2F47;
+    color: white;
+    border-radius: 3rem;
+    border: none;
+    height: 60px;
+    width: 260px;
+}
+
+.nav__logo > a {
+    color: white;
+    padding-left: 1rem;
+    padding-top: 2rem;
+}
+
+//Hero Image
+img {
+  size: 20px;
+}
