@@ -1,2 +1,14 @@
 /* _hero.scss */
 @use "../abstracts/variables" as *;
+
+.hero {
+    display: grid;
+    gap: 2rem;
+}
+
+@media only screen and (min-width: 560px) {
+  .cta{
+      grid-row: 2/3;
+      justify-self: left;
+  }
+}

@@ -13,6 +13,7 @@
 html {
     height: 100%;
     background: linear-gradient(0deg, rgba(224,8,153,1) 0%, rgba(170,67,230,1) 100%);
+    background-color: rebeccapurple;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -139,7 +140,7 @@ p   {
 }
 
 .cta{
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -165,11 +166,12 @@ p   {
 
 .nav__logo > a {
     color: white;
-    padding-left: 1rem;
-    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 //Hero Image
 img {
-  size: 20px;
+  max-width: 100%;
 }
